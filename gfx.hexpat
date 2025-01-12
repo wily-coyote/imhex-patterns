@@ -8,7 +8,7 @@ struct FILE {
     if(!std::string::starts_with(filename, "< THIS IS THE END OF A GFX FILE >")){
         char unknown[0x100];
         char length[0x100];
-        u8 data[std::string::parse_int(length, 10)];
+        u8 data[std::string::parse_int(length, 10)] [[sealed]];
         char texname[0x100];
     }
 };

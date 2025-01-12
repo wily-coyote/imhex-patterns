@@ -2,6 +2,7 @@
 #include <type/magic.pat>
 #include <type/color.pat>
 #include <std/bit.pat>
+#pragma magic [ 45 6C 65 63 62 79 74 65 53 70 72 00 ] @ 0x00
 
 // M.U.G.E.N Sprite File Format v2 file
 // Version 2 is more advanced, storing pixels
@@ -55,7 +56,7 @@ struct palette_t{
     u16 iLinked;
     u32 bData;
     u32 cbData;
-    type::RGBA8 palData[cbData/4] @ header.bLData + bData;
+    type::RGBA8 palData[cbData/4] @ header.bLData + bData [[sealed]];
 };
 
 struct sprite_t{
@@ -73,9 +74,9 @@ struct sprite_t{
     u16 iPalette;
     spriteflag_t sfFlags;
     if(sfFlags.translate){
-        u8 data[cbData] @ header.bTData + bData;
+        u8 data[cbData] @ header.bTData + bData [[sealed]];
     } else {
-        u8 data[cbData] @ header.bLData + bData;
+        u8 data[cbData] @ header.bLData + bData [[sealed]];
     }
 };
 

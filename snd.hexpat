@@ -1,5 +1,6 @@
 #include <type/magic.pat>
 #include <std/mem.pat>
+#pragma magic [ 45 6C 65 63 62 79 74 65 53 6E 64 00 ] @ 0x00
 
 // M.U.G.E.N SND file
 
@@ -17,8 +18,9 @@ struct sndfile_t{
     u32 cbData;
     u32 dwGroup;
     u32 dwItem;
-    u8 data[cbData];
+    u8 data[cbData] [[sealed]];
     $ = bNextFile;
+    builtin::hex::core::add_virtual_file(std::format("{}-{}.wav", dwGroup, dwItem), data);
 };
 
 sndheader_t header @ 0x0;

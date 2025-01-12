@@ -45,7 +45,7 @@ struct Entry {
 struct File {
     be u32 cProp;
     Prop rgProp[cProp];
-    u8 data[parent.rgEntry[iFile].size];;
+    u8 data[parent.rgEntry[iFile].size] [[sealed]];
     builtin::hex::core::add_virtual_file(std::format("{}", parent.rgEntry[iFile].name), data);
     iFile += 1;
 };

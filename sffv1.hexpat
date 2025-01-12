@@ -1,4 +1,5 @@
 #include <type/magic.pat>
+#pragma magic [ 45 6C 65 63 62 79 74 65 53 70 72 00 ] @ 0x00
 
 // M.U.G.E.N Sprite File Format v1 file
 // Version 1 of the spec is simply a collection of PCX files
@@ -50,7 +51,7 @@ struct sffv1file_t{
     u16 iLinked;
     u8 fPalShared;
     u8 reserved[13];
-    u8 data[cbData];
+    u8 data[cbData] [[sealed]];
     builtin::hex::core::add_virtual_file(std::format("{}-{}.pcx", iGroup, iSprite), data);
 };
 

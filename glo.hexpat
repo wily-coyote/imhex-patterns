@@ -1,14 +1,11 @@
-#include <hex/core.pat>
 #define ALSO_WRITE
 
 // Blast-Thru GLO file
 // This pattern can write to the filesystem
 
-#ifdef ALSO_WRITE
 #include <std/io.pat>
 #include <std/file.pat>
 #include <std/string.pat>
-#endif
 
 struct glofile_t{
     u32 cbName;
@@ -16,11 +13,11 @@ struct glofile_t{
     u32 bData;
     u32 cbData;
     #ifdef ALSO_WRITE
-    char data[cbData] @ bData;
+    char data[cbData] @ bData [[sealed]];
     writeFile(this.sName, this.data);
     #endif
     #ifndef ALSO_WRITE
-    u8 data[cbData] @ bData;
+    u8 data[cbData] @ bData [[sealed]];
     builtin::hex::core::add_virtual_file(sName, data);
     #endif
 };

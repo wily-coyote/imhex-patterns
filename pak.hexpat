@@ -7,8 +7,8 @@ struct File {
     char fileName[56];
     u32 fileOffset;
     u32 fileSize;
-    u8 fileData[fileSize] @ fileOffset;
-} [[static]];
+    u8 fileData[fileSize] @ fileOffset [[sealed]];
+};
 
 struct PAK {
     type::Magic<"PACK">;
