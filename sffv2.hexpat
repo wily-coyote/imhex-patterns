@@ -1,10 +1,11 @@
+#pragma description M.U.G.E.N Sprite File Format v2 file
+#pragma magic [ 45 6C 65 63 62 79 74 65 53 70 72 00 ] @ 0x00
+
 #include <std/mem.pat>
 #include <type/magic.pat>
 #include <type/color.pat>
 #include <std/bit.pat>
-#pragma magic [ 45 6C 65 63 62 79 74 65 53 70 72 00 ] @ 0x00
 
-// M.U.G.E.N Sprite File Format v2 file
 // Version 2 is more advanced, storing pixels
 // directly using compression algorithms
 

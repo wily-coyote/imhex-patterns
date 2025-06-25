@@ -1,7 +1,7 @@
-// #define ALSO_WRITE
+#pragma description Moorhuhn X XXL .dat file
 
-// Moorhuhn X XXL .dat file
 // This pattern can write to the filesystem
+// #define ALSO_WRITE
 
 #include <std/io.pat>
 #include <std/mem.pat>

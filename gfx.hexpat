@@ -1,7 +1,7 @@
+#pragma description Elf Bowling GFX archive file
+
 #include <std/string.pat>
 #include <std/mem.pat>
-
-// Elf Bowling GFX archive file
 
 struct FILE {
     char filename[0x100];

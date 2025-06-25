@@ -1,7 +1,8 @@
-#include <type/magic.pat>
+#pragma description M.U.G.E.N Sprite File Format v1 file
 #pragma magic [ 45 6C 65 63 62 79 74 65 53 70 72 00 ] @ 0x00
 
-// M.U.G.E.N Sprite File Format v1 file
+#include <type/magic.pat>
+
 // Version 1 of the spec is simply a collection of PCX files
 
 struct pcx_t{

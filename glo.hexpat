@@ -1,7 +1,7 @@
-#define ALSO_WRITE
+#pragma description Blast-Thru GLO file
 
-// Blast-Thru GLO file
 // This pattern can write to the filesystem
+#define ALSO_WRITE
 
 #include <std/io.pat>
 #include <std/file.pat>

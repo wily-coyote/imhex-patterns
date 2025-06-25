@@ -1,10 +1,10 @@
+#pragma description Longhorn .msstyles VARIANT chunk
+// Ref: https://github.com/nptr/msstyleEditor/wiki/.msstyles-Format
+
 #include <std/math.pat>
 #include <type/color.pat>
 
-// Longhorn .msstyles VARIANT chunk
 // Define POST for 4042 format, which has byte padding
-// Ref: https://github.com/nptr/msstyleEditor/wiki/.msstyles-Format
-
 #define POST
 
 struct LOGFONTW {

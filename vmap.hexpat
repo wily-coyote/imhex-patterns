@@ -1,9 +1,9 @@
-#include <std/math.pat>
+#pragma description Longhorn .msstyles VMAP chunk
 
-// Longhorn .msstyles VMAP chunk
 // Define POST for 4042 file format, which has byte padding
-
 #define POST
+
+#include <std/math.pat>
 
 struct VARIANT {
     u32 sz;

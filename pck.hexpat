@@ -1,6 +1,7 @@
-#include <std/io.pat>
-#include <std/string.pat>
-#include <hex/core.pat>
+#pragma description Minecraft XBOX 360 Edition PCK file
+// Ref: https://team-lodestone.github.io/Legacy-Docs/Formats/PCK/
+// Ref: https://aluigi.altervista.org/bms/minecraft_x360_pck.bms
+
 // This doesn't work for some reason.
 //
 // I needed to put `be` hints in all the types
@@ -8,10 +9,10 @@
 #pragma endian big
 #pragma magic [ 00 00 00 03 ] @ 0x00
 
-// Minecraft XBOX 360 Edition PCK file
+#include <std/io.pat>
+#include <std/string.pat>
+#include <hex/core.pat>
 
-// Ref: https://team-lodestone.github.io/Legacy-Docs/Formats/PCK/
-// Ref: https://aluigi.altervista.org/bms/minecraft_x360_pck.bms
 
 u32 iFile = 0;
 bool bXmlVersion = false;

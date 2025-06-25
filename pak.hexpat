@@ -1,7 +1,7 @@
-#include <type/magic.pat>
-
-// Quake PAK file
+#pragma description Quake PAK file
 // Ref: https://quakewiki.org/wiki/.pak
+
+#include <type/magic.pat>
 
 struct File {
     char fileName[56];

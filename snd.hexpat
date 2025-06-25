@@ -1,8 +1,8 @@
-#include <type/magic.pat>
-#include <std/mem.pat>
+#pragma description M.U.G.E.N SND file
 #pragma magic [ 45 6C 65 63 62 79 74 65 53 6E 64 00 ] @ 0x00
 
-// M.U.G.E.N SND file
+#include <type/magic.pat>
+#include <std/mem.pat>
 
 struct sndheader_t{
     type::Magic<"ElecbyteSnd\0">;
