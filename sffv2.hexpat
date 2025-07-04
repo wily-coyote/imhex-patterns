@@ -1,9 +1,8 @@
 #pragma description M.U.G.E.N Sprite File Format v2 file
-#pragma magic [ 45 6C 65 63 62 79 74 65 53 70 72 00 ] @ 0x00
+#pragma magic [ 45 6C 65 63 62 79 74 65 53 70 72 00 ?? ?? ?? 02] @ 0x00
 
 #include <std/mem.pat>
 #include <type/magic.pat>
-#include <type/color.pat>
 #include <std/bit.pat>
 
 // Version 2 is more advanced, storing pixels
@@ -14,24 +13,25 @@ struct sffversion_t {
     u8 verlo2;
     u8 verlo;
     u8 verhi;
+    u32 reserved1;
+    u32 reserved2;
 } [[static]];
 
 enum spritefmt_t : u8 {
-    Raw,
-    Invalid,
-    RLE8,
-    RLE5,
-    LZ5
+    Raw = 0,
+    Invalid = 1,
+    RLE8 = 2,
+    RLE5 = 3,
+    LZ5 = 4,
+    PNG8 = 10,
+    PNG24 = 11,
+    PNG32 = 12
 };
 
 struct sffv2_t{
     type::Magic<"ElecbyteSpr\0">;
     sffversion_t vVersion;
-    u32 reserved1;
-    u32 reserved2;
     sffversion_t vCompat;
-    u32 reserved3;
-    u32 reserved4;
     u32 bFirstSprite;
     u32 cSprite;
     u32 bFirstPalette;
@@ -57,7 +57,7 @@ struct palette_t{
     u16 iLinked;
     u32 bData;
     u32 cbData;
-    type::RGBA8 palData[cbData/4] @ header.bLData + bData [[sealed]];
+    u8 palData[cbData] @ header.bLData + bData [[sealed]];
 };
 
 struct sprite_t{

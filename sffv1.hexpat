@@ -1,5 +1,5 @@
 #pragma description M.U.G.E.N Sprite File Format v1 file
-#pragma magic [ 45 6C 65 63 62 79 74 65 53 70 72 00 ] @ 0x00
+#pragma magic [ 45 6C 65 63 62 79 74 65 53 70 72 00 ?? ?? ?? 01 ] @ 0x00
 
 #include <type/magic.pat>
 
