@@ -1,5 +1,5 @@
 #pragma description Windows 8+ account picture file
-#pragma magic [ ?? 31 53 50 53 18 B0 8B 0B 25 27 44 4B 92 BA 79 33 AE ]
+#pragma magic [ 31 53 50 53 18 B0 8B 0B 25 27 44 4B 92 BA 79 33 AE ] @ 0x08
 
 // Ref: https://www.bilibili.com/opus/487940690358510578
 
